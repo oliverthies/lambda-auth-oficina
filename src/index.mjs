@@ -84,14 +84,16 @@ export async function handler(event) {
     // 3. Gerar JWT com mesmas claims do JwtTokenProvider.java
     const token = jwt.sign(
       {
-        userId: user?.user_id || null,
+        userId: user ? Number(user.user_id) : null,
         role: user?.role || 'CLIENTE',
-        clientId: client.client_id,
+        clientId: Number(client.client_id),
       },
       process.env.JWT_SECRET,
       {
+        algorithm: 'HS512',
         subject: user?.username || cpf,
         expiresIn: '1h',
+        header: { alg: 'HS512' },
       }
     );
 
