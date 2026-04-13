@@ -5,7 +5,7 @@ output "api_gateway_url" {
 
 output "api_gateway_auth_endpoint" {
   description = "Endpoint completo: POST <url>/auth com body {\"cpf\": \"12345678901\"}"
-  value       = "${aws_apigatewayv2_stage.default.invoke_url}/auth"
+  value       = "${trimsuffix(aws_apigatewayv2_stage.default.invoke_url, "/")}/auth"
 }
 
 output "lambda_function_name" {
