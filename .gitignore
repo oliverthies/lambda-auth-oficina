@@ -1,0 +1,20 @@
+node_modules/
+.env
+function.zip
+
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate.backup
+terraform/.terraform.lock.hcl
+terraform/terraform.tfvars
+terraform/function.zip
+terraform/.terraform.tfstate.lock.info
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

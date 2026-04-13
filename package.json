@@ -1,0 +1,14 @@
+{
+  "name": "lambda-auth-oficina",
+  "version": "1.0.0",
+  "description": "Lambda Serverless para autenticação via CPF - Sistema Oficina",
+  "type": "module",
+  "scripts": {
+    "test": "node --test src/*.test.mjs",
+    "zip": "zip -r function.zip src/ node_modules/ package.json"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1"
+  }
+}

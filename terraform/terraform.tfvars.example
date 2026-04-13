@@ -1,0 +1,18 @@
+# Copie este arquivo para terraform.tfvars e preencha os valores.
+# NUNCA commite terraform.tfvars com dados reais.
+
+# Rede (outputs do infra-geral-oficina)
+vpc_id             = "vpc-xxxxxxxxx"
+private_subnet_ids = ["subnet-aaaa", "subnet-bbbb"]
+
+# Banco de dados (outputs do infra-database-oficina)
+db_host     = "oficina-db.xxxxxxxxx.us-east-1.rds.amazonaws.com"
+db_name     = "oficina"
+db_user     = "oficina_admin"
+db_password = "SUA_SENHA_AQUI"
+
+# JWT (mesmo secret usado na API)
+jwt_secret = "MESMO_JWT_SECRET_DA_API"
+
+# Security Group do RDS (para regra de ingress automática, opcional)
+rds_security_group_id = "sg-xxxxxxxxx"
