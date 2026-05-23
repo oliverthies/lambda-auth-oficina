@@ -2,6 +2,8 @@
 
 Function Serverless (AWS Lambda) para autenticação de clientes via CPF no Sistema de Gestão de Oficina Mecânica.
 
+**Deploy completo da solução (aplicar este módulo por último):** [INFRA_DEPLOY.md](https://github.com/oliverthies/infra-geral-oficina/blob/main/INFRA_DEPLOY.md)
+
 ## Propósito
 
 Este repositório contém a Lambda responsável por:
