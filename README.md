@@ -11,7 +11,7 @@ Este repositório contém a Lambda responsável por:
 2. **Consultar a existência e status** do cliente na base de dados (RDS PostgreSQL)
 3. **Gerar e devolver um JWT** válido para consumo das APIs protegidas
 
-O JWT gerado é compatível com o `JwtAuthenticationFilter` da aplicação principal (`projeto-oficina`), compartilhando o mesmo secret e estrutura de claims.
+O JWT gerado é compatível com o `JwtAuthenticationFilter` da API no EKS (`oficina-api` / [projeto-oficina](https://github.com/oliverthies/projeto-oficina)), compartilhando o mesmo secret e estrutura de claims.
 
 ## Arquitetura
 
@@ -156,6 +156,8 @@ terraform apply
 |---|---|
 | Pull Request → `main` | `terraform plan` (validação) |
 | Push em `main` | `npm ci` + `terraform apply` (deploy) |
+
+**Governança:** PR obrigatório para `main`; convide **`soat-architecture`** e use branch protection (1 approval + plan no PR).
 
 ### Secrets necessários no GitHub
 
