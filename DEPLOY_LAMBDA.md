@@ -30,6 +30,8 @@ cd lambda-auth-oficina
 
 Sem `-UseLocalState` se o backend S3 `oficina-terraform-state-...` estiver acessível.
 
+**GitHub Actions:** o workflow desabilita `backend_s3.tf` no CI e usa `terraform.tfstate` versionado no repositório (evita prompt de migração S3 no runner).
+
 O script roda `npm ci`, `terraform init`, `terraform apply` e mostra a URL `POST .../auth`.
 
 ## Deploy via GitHub Actions
