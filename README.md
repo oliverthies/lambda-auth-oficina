@@ -4,6 +4,8 @@ Function Serverless (AWS Lambda) para autenticação de clientes via CPF no Sist
 
 **Deploy completo da solução (aplicar este módulo por último):** [INFRA_DEPLOY.md](https://github.com/oliverthies/infra-geral-oficina/blob/main/INFRA_DEPLOY.md)
 
+**Guia rápido (provisionar + testar):** [DEPLOY_LAMBDA.md](./DEPLOY_LAMBDA.md)
+
 ## Propósito
 
 Este repositório contém a Lambda responsável por:
@@ -135,20 +137,17 @@ O token gerado contém as mesmas claims do `JwtTokenProvider.java`:
 
 ## Deploy Local
 
-```bash
-# 1. Instalar dependências
-npm ci
+```powershell
+# 1. Lab AWS ativo; copie terraform/terraform.tfvars.example → terraform.tfvars
+# 2. jwt_secret = MESMO valor da API (infra-geral-oficina/terraform.tfvars)
+cd lambda-auth-oficina
+.\scripts\deploy-lambda-auth.ps1
 
-# 2. Configurar variáveis Terraform
-cp terraform/terraform.tfvars.example terraform/terraform.tfvars
-# Editar terraform.tfvars com os valores reais
-
-# 3. Provisionar
-cd terraform
-terraform init
-terraform plan
-terraform apply
+# 3. Testar CPF → JWT
+.\scripts\test-lambda-auth.ps1 -Cpf "52998224725" -ApiBaseUrl "http://<elb>/api/v1"
 ```
+
+Detalhes: [DEPLOY_LAMBDA.md](./DEPLOY_LAMBDA.md).
 
 ## CI/CD
 
