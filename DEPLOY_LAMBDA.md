@@ -44,7 +44,7 @@ Repositório **lambda-auth-oficina** → configure **Secrets**:
 | `AWS_SECRET_ACCESS_KEY` | Lab |
 | `AWS_SESSION_TOKEN` | Lab |
 | `VPC_ID` | `vpc-...` |
-| `PRIVATE_SUBNET_IDS` | `subnet-aaa,subnet-bbb` (vírgula) |
+| `PRIVATE_SUBNET_IDS` | `subnet-aaa,subnet-bbb` (vírgula, sem colchetes) — o CI converte para JSON |
 | `RDS_SECURITY_GROUP_ID` | `sg-...` |
 | `DB_HOST` | endpoint RDS |
 | `DB_USER` / `DB_PASSWORD` | oficina |
