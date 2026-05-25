@@ -50,7 +50,11 @@ Repositório **lambda-auth-oficina** → configure **Secrets**:
 | `DB_USER` / `DB_PASSWORD` | oficina |
 | `JWT_SECRET` | mesmo da API |
 
-Push na `main` ou **Run workflow** → Deploy Lambda Auth.
+Push na `main`, **Run workflow** (Actions → Deploy Lambda Auth) ou:
+
+```powershell
+gh workflow run "Deploy Lambda Auth" --ref main
+```
 
 ## Testar após o deploy
 
